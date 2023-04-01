@@ -70,7 +70,7 @@ newJson=$(echo "$json" | jq \
 echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
 
 # Configure Nginx & Geosite and Geoip
-curl -Lo /usr/local/share/xray/geoip.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat && curl -Lo /usr/local/share/xray/geosite.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat && systemctl restart nginx && systemctl restart xray 
+curl -Lo /usr/local/share/xray/geoip.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat && curl -Lo /usr/local/share/xray/geosite.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat && curl -Lo /etc/nginx/nginx.conf https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/nginx.conf && systemctl restart xray && systemctl restart nginx
 
 # Ask for time zone
 timedatectl set-timezone Asia/Ho_Chi_Minh && \
