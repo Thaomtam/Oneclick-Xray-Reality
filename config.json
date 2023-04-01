@@ -1,16 +1,23 @@
 {
+  "log": {
+    "loglevel": "warning",
+    "error": "/var/log/xray/error.log",
+    "access": "/var/log/xray/access.log"
+  },
   "api": {
-    "tag": "api",
     "services": [
       "HandlerService",
       "LoggerService",
       "StatsService"
-    ]
+    ],
+    "tag": "api"
   },
   "stats": {},
   "policy": {
     "levels": {
       "0": {
+        "handshake": 2,
+        "connIdle": 128,
         "statsUserUplink": true,
         "statsUserDownlink": true
       }
@@ -24,11 +31,31 @@
   },
   "dns": {
     "servers": [
+      "https+local://cloudflare-dns.com/dns-query",
       "1.1.1.1",
-      "1.0.0.1"
+      "1.0.0.1",
+      "8.8.8.8",
+      "8.8.4.4",
+      "localhost"
     ]
   },
   "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 32768,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    },
     {
       "listen": "0.0.0.0",
       "port": 443,
@@ -46,7 +73,7 @@
         "network": "h2",
         "security": "reality",
         "realitySettings": {
-          "show": false,
+          "show": true,
           "fingerprint": "chrome",
           "dest": "8003",
           "xver": 1,
@@ -66,16 +93,14 @@
       }
     }
   ],
-
-
   "outbounds": [
     {
-      "protocol": "freedom",
-      "tag": "Direct"
+      "tag": "direct",
+      "protocol": "freedom"
     },
     {
-      "protocol": "blackhole",
-      "tag": "blocked"
+      "tag": "block",
+      "protocol": "blackhole"
     }
   ],
   "routing": {
@@ -90,32 +115,31 @@
       },
       {
         "type": "field",
-        "ip": [
-          "geoip:private"
-        ],
-        "outboundTag": "blocked"
-      },
-      {
         "protocol": [
           "bittorrent"
         ],
-        "type": "field",
-        "outboundTag": "blocked"
+        "outboundTag": "block"
       },
       {
         "type": "field",
-	"outboundTag": "Direct",
-	"ip": [
-	  "geoip:vn",
-	  "geoip:telegram",
-	  "geoip:cloudflare",
-	  "geoip:cloudfront",
-	  "geoip:facebook",
-	  "geoip:fastly",
-	  "geoip:google",
-	  "geoip:netflix",
-	  "geoip:twitter"
-	]
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:vn"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
       }
     ]
   }
