@@ -56,7 +56,7 @@
           "xver": 1,
           "maxTimeDiff": 0,
           "minClientVer": "1.8.0",
-          "serverNames": "",
+          "serverNames": [],
                     "privateKey": "",
                     "shortIds": []
         }
