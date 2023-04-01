@@ -85,7 +85,7 @@
       },
       "tag": "api",
       "sniffing": {
-        "enabled": true,
+        "enabled": false,
         "destOverride": [
           "http",
           "tls"
@@ -130,7 +130,7 @@
       {
         "type": "field",
         "ip": [
-          "geoip:vn"
+          "geoip:cn"
         ],
         "outboundTag": "block"
       },
