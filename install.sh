@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install snapd
+apt update -y && \
+apt install -y snapd
+
 # Ask for domain
 read -p "Enter your domain name: " domain
 
@@ -8,10 +12,6 @@ read -p "Enter serverNames: " sni
 
 # Ask for SNI
 read -p "Enter uuid: " id
-
-# Install snapd
-apt update -y && \
-apt install -y snapd
 
 # Install certbot
 snap install core
@@ -40,9 +40,6 @@ chmod +x update_certbot.sh
 # Install Nginx
 apt install -y gnupg2 ca-certificates lsb-release ubuntu-keyring && curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor > /usr/share/keyrings/nginx-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/mainline/ubuntu `lsb_release -cs` nginx" > /etc/apt/sources.list.d/nginx.list && echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" > /etc/apt/preferences.d/99nginx && apt update -y && apt install -y nginx && mkdir -p /etc/systemd/system/nginx.service.d && echo -e "[Service]\nExecStartPost=/bin/sleep 0.1" > /etc/systemd/system/nginx.service.d/override.conf && systemctl daemon-reload
 
-# Configure Nginx & Geosite and Geoip
-curl -Lo /usr/local/share/xray/geoip.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat && curl -Lo /usr/local/share/xray/geosite.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
-systemctl restart nginx
 # Update package index and install dependencies
 apt-get install -y jq
 apt-get install -y openssl
@@ -56,7 +53,7 @@ json=$(curl -s https://raw.githubusercontent.com/Thaomtam/h2reality-install/main
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
 pub=$(echo "$keys" | awk '/Public key:/ {print $3}')
-serverIp=$(curl -s ifconfig.me)
+serverIp=$domain
 uuid=$id
 shortId=$(openssl rand -hex 8)
 sni=$sni
@@ -72,7 +69,8 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].streamSettings.realitySettings.shortIds += ["'$shortId'"]')
 echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
 
-systemctl restart xray 
+# Configure Nginx & Geosite and Geoip
+curl -Lo /usr/local/share/xray/geoip.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat && curl -Lo /usr/local/share/xray/geosite.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat && systemctl restart nginx && systemctl restart xray 
 
 # Ask for time zone
 timedatectl set-timezone Asia/Ho_Chi_Minh && \
