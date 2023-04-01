@@ -41,22 +41,6 @@
   },
   "inbounds": [
     {
-      "listen": "127.0.0.1",
-      "port": 32768,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "api",
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
-      }
-    },
-    {
       "listen": "0.0.0.0",
       "port": 443,
       "protocol": "vless",
@@ -86,6 +70,22 @@
       },
       "sniffing": {
         "enabled": false,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 32768,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api",
+      "sniffing": {
+        "enabled": true,
         "destOverride": [
           "http",
           "tls"
