@@ -84,13 +84,7 @@
         "address": "127.0.0.1"
       },
       "tag": "api",
-      "sniffing": {
-        "enabled": false,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
-      }
+      "sniffing": null
     }
   ],
   "outbounds": [
