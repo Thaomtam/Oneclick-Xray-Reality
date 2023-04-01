@@ -7,6 +7,15 @@ just need you to run this command
  bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/install.sh)"
 ``` 
 and it will do the rest for you.
-## Note
-1. I have only tested it on Ubuntu 22 and wrote it for that system. Although I have the time and willingness to write it for other systems, I don't think I will need to do so unless I am forced to.
-2. I used ChatGPT to translate my words. Please pardon any mistakes in the translation.
+
+# Linux-NetSpeed
+```
+wget -O tcp.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+```
+| Dự án | |
+| :--- | :--- |
+| Chương trình | **/usr/local/bin/xray** |
+| Cấu hình | **/usr/local/etc/xray/config.json** |
+| Nghiên cứu | `xray -test -config /usr/local/etc/xray/config.json` |
+| Xem nhật kí | `journalctl -u xray --output cat -e` |
+| Nhật ký thời gian thực | `journalctl -u xray --output cat -f` |
