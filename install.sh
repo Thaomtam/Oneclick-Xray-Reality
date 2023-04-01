@@ -44,7 +44,7 @@ echo -e "[Service]\nExecStartPost=/bin/sleep 0.1" > /etc/systemd/system/nginx.se
 systemctl daemon-reload
 
 # Configure Xray and Nginx
-curl -Lo /etc/nginx/nginx.conf https://raw.githubusercontent.com/Thaomtam/Xray-install/main/nginx.conf && \
+curl -Lo /etc/nginx/nginx.conf https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/nginx.conf && \
 curl -Lo /usr/local/share/xray/geoip.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat && \
 curl -Lo /usr/local/share/xray/geosite.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
 # Update package index and install dependencies
@@ -54,10 +54,10 @@ apt-get install -y qrencode
 
 # Ask for SNI
 read -p "Enter serverNames: " sni
-
+# Install Xray
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
-json=$(curl -s https://raw.githubusercontent.com/sajjaddg/xray-reality/master/config.json)
+json=$(curl -s https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/config.json)
 
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
