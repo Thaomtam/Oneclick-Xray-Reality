@@ -4,14 +4,6 @@
     "error": "/var/log/xray/error.log",
     "access": "/var/log/xray/access.log"
   },
-  "api": {
-    "services": [
-      "HandlerService",
-      "LoggerService",
-      "StatsService"
-    ],
-    "tag": "api"
-  },
   "stats": {},
   "policy": {
     "levels": {
@@ -75,16 +67,6 @@
           "tls"
         ]
       }
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 32768,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1"
-      },
-      "tag": "api",
-      "sniffing": null
     }
   ],
   "outbounds": [
@@ -100,13 +82,6 @@
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
-      {
-        "inboundTag": [
-          "api"
-        ],
-        "outboundTag": "api",
-        "type": "field"
-      },
       {
         "type": "field",
         "protocol": [
