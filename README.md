@@ -4,7 +4,7 @@ This is a Bash script that installs Xray Beta and downloads the configuration fo
 ## Installation Guide
 just need you to run this command
 ```
- bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/install.sh)"
+ bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/h2.sh)"
 ``` 
 and it will do the rest for you.
 
