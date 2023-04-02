@@ -1,8 +1,6 @@
 {
   "log": {
-    "loglevel": "warning",
-    "error": "/var/log/xray/error.log",
-    "access": "/var/log/xray/access.log"
+    "loglevel": "warning"
   },
   "stats": {},
   "policy": {
@@ -23,12 +21,8 @@
   },
   "dns": {
     "servers": [
-      "https+local://cloudflare-dns.com/dns-query",
       "1.1.1.1",
-      "1.0.0.1",
-      "8.8.8.8",
-      "8.8.4.4",
-      "localhost"
+      "1.0.0.1"
     ]
   },
   "inbounds": [
@@ -51,21 +45,14 @@
         "realitySettings": {
           "show": true,
           "fingerprint": "chrome",
-          "dest": "8003",
-          "xver": 1,
+          "dest": "",
+          "xver": 0,
           "maxTimeDiff": 0,
           "minClientVer": "1.8.0",
           "serverNames": [],
                     "privateKey": "",
                     "shortIds": []
         }
-      },
-      "sniffing": {
-        "enabled": false,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
       }
     }
   ],
@@ -93,13 +80,6 @@
         "type": "field",
         "ip": [
           "geoip:private"
-        ],
-        "outboundTag": "block"
-      },
-      {
-        "type": "field",
-        "ip": [
-          "geoip:cn"
         ],
         "outboundTag": "block"
       },
