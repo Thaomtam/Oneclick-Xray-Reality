@@ -48,7 +48,7 @@ apt-get install -y qrencode
 # Install Xray
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
-json=$(curl -s https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/config.json)
+json=$(curl -s https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/VLESS-XTLS-uTLS-REALITY.json)
 
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
