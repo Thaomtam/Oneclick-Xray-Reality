@@ -75,7 +75,9 @@ curl -Lo /usr/local/share/xray/geoip.dat https://cdn.jsdelivr.net/gh/Loyalsoldie
 # Ask for time zone
 timedatectl set-timezone Asia/Ho_Chi_Minh && \
 apt install ntp && \
-timedatectl set-ntp on
+timedatectl set-ntp on && \
+sysctl -w net.core.rmem_max=16777216 && \
+sysctl -w net.core.wmem_max=16777216
 
 echo "$url"
 
