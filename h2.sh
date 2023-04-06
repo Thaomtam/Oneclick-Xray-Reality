@@ -6,6 +6,8 @@ apt-get install -y qrencode
 
 read -p "Enter serverNames: " sni
 
+read -p "Enter uuid: " uuid
+
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
 json=$(curl -s https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/config.json)
@@ -14,10 +16,10 @@ keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
 pub=$(echo "$keys" | awk '/Public key:/ {print $3}')
 serverIp=$(curl -s ifconfig.me)
-uuid=$(xray uuid)
+uuid=$uuid
 shortId=$(openssl rand -hex 8)
 sni=$sni
-url="vless://$uuid@$serverIp:443?path=%2F&security=reality&encryption=none&pbk=$pub&fp=chrome&type=http&sni=$sni&sid=$shortId#REALITY"
+url="vless://$uuid@$serverIp:443?path=%2F&security=reality&encryption=none&pbk=$pub&fp=chrome&type=http&sni=$sni&sid=$shortId#$uuid"
 
 newJson=$(echo "$json" | jq \
     --arg sni "$sni" \
