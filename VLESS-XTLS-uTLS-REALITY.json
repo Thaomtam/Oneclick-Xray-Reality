@@ -7,7 +7,7 @@
     "levels": {
       "0": {
         "handshake": 2,
-        "connIdle": 180
+        "connIdle": 120
       }
     }
   },
@@ -64,7 +64,7 @@
       {
         "type": "field",
         "ip": [
-          "geoip:private"
+          "geoip:cn"
         ],
         "outboundTag": "block"
       }
