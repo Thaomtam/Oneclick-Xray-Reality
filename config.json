@@ -37,7 +37,7 @@
         "realitySettings": {
           "show": true,
           "fingerprint": "chrome",
-          "dest": "www.lovelive-anime.jp:443",
+          "dest": "www.cloudflare.com:443",
           "xver": 0,
           "maxTimeDiff": 0,
           "minClientVer": "1.8.0",
