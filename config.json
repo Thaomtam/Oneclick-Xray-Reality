@@ -6,8 +6,8 @@
   "policy": {
     "levels": {
       "0": {
-        "handshake": 4,
-        "connIdle": 180
+        "handshake": 2,
+        "connIdle": 120
       }
     }
   },
@@ -63,15 +63,8 @@
     "rules": [
       {
         "type": "field",
-        "protocol": [
-          "bittorrent"
-        ],
-        "outboundTag": "block"
-      },
-      {
-        "type": "field",
         "ip": [
-          "geoip:private"
+          "geoip:cn"
         ],
         "outboundTag": "block"
       }
