@@ -2,7 +2,6 @@
   "log": {
     "loglevel": "warning"
   },
-  "stats": {},
   "policy": {
     "levels": {
       "0": {
@@ -35,8 +34,7 @@
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "show": true,
-          "fingerprint": "chrome",
+          "show": false,
           "dest": "8003",
           "xver": 1,
           "maxTimeDiff": 0,
@@ -64,7 +62,7 @@
       {
         "type": "field",
         "ip": [
-          "geoip:cn"
+          "geoip:private"
         ],
         "outboundTag": "block"
       }
