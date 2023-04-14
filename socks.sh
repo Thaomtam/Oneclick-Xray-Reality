@@ -55,8 +55,8 @@ newJson=$(echo "$json" | jq \
     --arg password "$password" \
     '.inbounds[0].port= ['$port'] |
      .inbounds[0].settings.accounts.user = ["'$user'"] |
-     .inbounds[0].settings.accounts.pass = ["'$password'"] |
-echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
+     .inbounds[0].settings.accounts.pass = ["'$password'"]' \
+    ) && echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
 
 # Configure Geoip
 curl -Lo /usr/local/share/xray/geoip.dat https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat && \
