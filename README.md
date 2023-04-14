@@ -9,6 +9,10 @@ This is a Bash script that installs Xray Beta and downloads the configuration fo
 ```
  bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/install.sh)"
 ```
+## Installation Socks Proxy
+```
+ bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/socks.sh)"
+```
 
 # Linux-NetSpeed
 ```
