@@ -2,15 +2,6 @@
   "log": {
     "loglevel": "warning"
   },
-  "stats": {},
-  "policy": {
-    "levels": {
-      "0": {
-        "handshake": 2,
-        "connIdle": 120
-      }
-    }
-  },
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -64,6 +55,7 @@
       {
         "type": "field",
         "ip": [
+          "geoip:cn",
           "geoip:private"
         ],
         "outboundTag": "block"
