@@ -5,10 +5,10 @@ apt update -y && \
 apt install -y snapd
 
 # Ask for domain
-read -p "Enter your domain name: " domain
+read -p "Enter your tên miền hoặc ip: " xdomain
 
 # Ask for SNI
-read -p "Enter serverNames: " sni
+read -p "Enter serverNames bypass nhà mạng: " sni
 
 # Ask for SNI
 read -p "Enter uuid: " id
