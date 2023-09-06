@@ -1,0 +1,70 @@
+{
+  "dns": {
+    "servers": [
+      "https+local://cloudflare-dns.com/dns-query",
+      "1.1.1.1",
+      "1.0.0.1",
+      "8.8.8.8",
+      "8.8.4.4",
+      "localhost"
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 0,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "",
+            "flow": ""
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "h2",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "",
+          "xver": 0,
+          "maxTimeDiff": 0,
+          "minClientVer": "1.8.0",
+          "serverNames": [],
+          "privateKey": "",
+          "shortIds": []
+        }
+      }
+    }
+  ],
+
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
+        "protocol": ["bittorrent"],
+        "type": "field",
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
