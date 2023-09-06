@@ -3,11 +3,11 @@ This is a Bash script that installs Xray Beta and downloads the configuration fo
 #
 ## Installation h2+reality
 ```
- bash -c "$(curl -L [https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/h2.sh](https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/h2.sh?token=GHSAT0AAAAAACHFDCR2CLR6H7OYFAGX7I2YZHYKDEA))"
+ bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/h2.sh?token=GHSAT0AAAAAACHFDCR2CLR6H7OYFAGX7I2YZHYKDEA)"
 ```
 ## Installation vision+reality
 ```
- bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/install.sh)"
+ bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/vision.sh?token=GHSAT0AAAAAACHFDCR2W4S7TT3ZY2WBMLWWZHYKFBA)"
 ```
 ## Installation Socks Proxy
 ```
