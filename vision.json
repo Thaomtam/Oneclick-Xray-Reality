@@ -35,7 +35,7 @@
         "security": "reality",
         "realitySettings": {
           "show": false,
-          "dest": "8003",
+          "dest": "www.lovelive-anime.jp:443",
           "xver": 1,
           "maxTimeDiff": 0,
           "minClientVer": "1.8.0",
