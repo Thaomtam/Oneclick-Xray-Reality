@@ -3,7 +3,7 @@ This is a Bash script that installs Xray Beta and downloads the configuration fo
 #
 ## Installation h2+reality
 ```
- bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/h2.sh?token=GHSAT0AAAAAACHFDCR2CLR6H7OYFAGX7I2YZHYKDEA)"
+ bash -c "$(curl -L [https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/h2.sh?token=GHSAT0AAAAAACHFDCR2CLR6H7OYFAGX7I2YZHYKDEA](https://raw.githubusercontent.com/Thaomtam/VPS/main/setup.sh))"
 ```
 ## Installation vision+reality
 ```
