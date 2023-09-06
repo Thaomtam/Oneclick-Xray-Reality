@@ -10,7 +10,7 @@ read -p "Enter uuid: " uuid
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
-json=$(curl -s https://raw.githubusercontent.com/Thaomtam/h2reality-install/main/config.json)
+json=$(curl -s https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/h2.json?token=GHSAT0AAAAAACHFDCR264A5SK35GYFHGSAQZHYJWJQ)
 
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
@@ -19,7 +19,7 @@ serverIp=$(curl -s ifconfig.me)
 uuid=$uuid
 shortId=$(openssl rand -hex 8)
 sni=$sni
-url="vless://$uuid@$serverIp:443?path=%2F&security=reality&encryption=none&pbk=$pub&fp=chrome&type=http&sni=$sni&sid=$shortId#$uuid"
+url="vless://$uuid@$serverIp:443?path=%2F&security=reality&encryption=none&pbk=$pub&fp=chrome&type=http&sni=$sni&sid=$shortId#h2-huy"
 
 newJson=$(echo "$json" | jq \
     --arg sni "$sni" \
