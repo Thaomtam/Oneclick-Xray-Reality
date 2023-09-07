@@ -18,6 +18,14 @@ This is a Bash script that installs Xray Beta and downloads the configuration fo
 ```
  LH MUA QUA ZALO 0326 333 473
 ```
+| | Không cần phải đăng ký tên miền | Giải quyết TLS trong TLS | Tích hợp đa kênh | Truy cập qua CDN |
+| :--- | :---: | :---: | :---: | :---: |
+| **VLESS-XTLS-Vision** | :x: | :heavy_check_mark: | :x: | :x: |
+| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
+| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| **VLESS-gRPC** | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+
 | Dự án | |
 | :--- | :--- |
 | Chương trình | **/usr/local/bin/xray** |
