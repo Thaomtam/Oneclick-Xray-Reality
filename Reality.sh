@@ -5,7 +5,7 @@ apt update -y && \
 apt install -y snapd
 
 # Ask for domain
-read -p "Tên Miền: " domain
+read -p "MY DOMAIN: " domain
 
 # Ask for SNI
 read -p "Bug SNI: " sni
