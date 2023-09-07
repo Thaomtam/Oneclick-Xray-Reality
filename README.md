@@ -3,20 +3,20 @@ This is a Bash script that installs Xray Beta and downloads the configuration fo
 #
 ## Installation h2+reality
 ```
- bash -c "$(curl -L [https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/h2.sh?token=GHSAT0AAAAAACHFDCR2CLR6H7OYFAGX7I2YZHYKDEA](https://raw.githubusercontent.com/Thaomtam/VPS/main/setup.sh))"
+ LH MUA QUA ZALO 0326 333 473
 ```
 ## Installation vision+reality
 ```
- bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/vision.sh?token=GHSAT0AAAAAACHFDCR2W4S7TT3ZY2WBMLWWZHYKFBA)"
+ LH MUA QUA ZALO 0326 333 473
 ```
 ## Installation Socks Proxy
 ```
- bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/socks.sh)"
+ LH MUA QUA ZALO 0326 333 473
 ```
 
-# Linux-NetSpeed
+# Linux-NetSpeed (Tăng tốc vps)
 ```
-wget -O tcp.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+ LH MUA QUA ZALO 0326 333 473
 ```
 | Dự án | |
 | :--- | :--- |
