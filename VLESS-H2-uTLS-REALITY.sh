@@ -10,7 +10,7 @@ read -p "Enter uuid: " uuid
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
-json=$(curl -s https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/h2.json?token=GHSAT0AAAAAACHFDCR264A5SK35GYFHGSAQZHYJWJQ)
+json=$(curl -s https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/VLESS-H2-uTLS-REALITY.json)
 
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
