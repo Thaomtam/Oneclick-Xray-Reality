@@ -1,6 +1,10 @@
 # Xray-reality
 This is a Bash script that installs Xray Beta and downloads the configuration for the repository created by [dailyhbd](https://www.youtube.com/channel/UCk6D0n5Xy6EN16AE2g6q0uQ) for ViệtNam inside this repository with your own key and places it only with one command 😏
 #
+## Tập lệnh cài đặt wireguard 1 cú nhấp
+```
+curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/main-linux-amd64 && chmod +x warp-reg && ./warp-reg && rm warp-reg
+```
 ## Installation VLESS-H2-uTLS-REALITY
 ```
  LH MUA QUA ZALO 0326 333 473
