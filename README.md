@@ -37,3 +37,138 @@ curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/m
 | Nghiên cứu | `xray -test -config /usr/local/etc/xray/config.json` |
 | Xem nhật kí | `journalctl -u xray --output cat -e` |
 | Nhật ký thời gian thực | `journalctl -u xray --output cat -f` |
+{
+  "log": {
+    "access": "none",
+    "loglevel": "error",
+    "dnsLog": true
+  },
+  "inbounds": [
+    {
+      "tag": "proxy-in",
+      "port": 9898,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "network": "tcp,udp",
+        "followRedirect": true
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tproxy": "tproxy"
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": ["http", "tls"]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "27.71.235.169",
+            "port": 443,
+            "users": [
+              {
+                "id": "thoitiet.github",
+                "flow": "xtls-rprx-vision",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "fingerprint": "chrome",
+          "serverName": "dl.kgvn.garenanow.com",
+          "publicKey": "BMVrtf_T_ohjCaCA8UCWcJqwCQGOP0JTK1CjJAEks2s",
+          "shortId": "4e6d88f5d484a17a",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      }
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    },
+    {
+      "tag": "dns-out",
+      "protocol": "dns",
+      "settings": {
+        "address": "1.1.1.1"
+      }
+    }
+  ],
+  "dns": {
+    "hosts": {},
+    "servers": [
+      "1.1.1.1"
+    ],
+    "tag": "dns",
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+        "domainMatcher": "mph",
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "inboundTag": [
+                    "proxy-in"
+                ],
+                "outboundTag": "dns-out",
+                "port": 53,
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "geosite:category-ads-all",
+                    "keyword:ads"
+                ],
+                "outboundTag": "block",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "regexp:^.*googlesyndication.com$",
+                    "regexp:^.*adtival\\.network$"
+                ],
+                "outboundTag": "proxy",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "geosite:youtube"
+                ],
+                "network": "udp",
+                "outboundTag": "block",
+                "type": "field"
+            },
+            {
+                "network": "tcp,udp",
+                "outboundTag": "proxy",
+                "type": "field"
+            }
+        ]
+    }
+}
