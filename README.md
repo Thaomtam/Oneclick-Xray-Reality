@@ -37,3 +37,11 @@ curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/m
 | Nghiên cứu | `xray -test -config /usr/local/etc/xray/config.json` |
 | Xem nhật kí | `journalctl -u xray --output cat -e` |
 | Nhật ký thời gian thực | `journalctl -u xray --output cat -f` |
+
+'''
+https://sourceforge.net/projects/kharamekernelsurmx1971/files/KharameKernelSU_11229.zip/download
+'''
+
+'''
+https://sourceforge.net/projects/kharamekernelsurmx1971/files/KernelSU_v0.6.7_11210-release.apk/download
+'''
