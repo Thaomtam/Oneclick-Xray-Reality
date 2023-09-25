@@ -11,7 +11,7 @@ curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/m
 ```
 ## Installation VLESS-XTLS-uTLS-REALITY
 ```
- LH MUA QUA ZALO 0326 333 473
+ bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/Reality.sh)"
 ```
 ## Installation Socks Proxy
 ```
