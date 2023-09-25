@@ -20,7 +20,7 @@ curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/m
 
 # Linux-NetSpeed (Tăng tốc vps)
 ```
- LH MUA QUA ZALO 0326 333 473
+ wget -O tcpx.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
 ```
 | | Không cần phải đăng ký tên miền | Giải quyết TLS trong TLS | Tích hợp đa kênh | Truy cập qua CDN |
 | :--- | :---: | :---: | :---: | :---: |
