@@ -25,7 +25,7 @@ curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/m
 
 # THỜI TIẾT TCP
 ```
- bash -c "$(curl -L https://raw.githubusercontent.com/teddysun/across/master/bbr.sh)"
+ bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/thoitiet.sh)"
 ```
 | | Không cần phải đăng ký tên miền | Giải quyết TLS trong TLS | Tích hợp đa kênh | Truy cập qua CDN |
 | :--- | :---: | :---: | :---: | :---: |
