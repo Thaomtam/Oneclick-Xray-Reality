@@ -22,6 +22,11 @@ curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/m
 ```
  wget -O tcpx.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
 ```
+
+# THỜI TIẾT TCP
+```
+ bash -c "$(curl -L https://raw.githubusercontent.com/teddysun/across/master/bbr.sh)"
+```
 | | Không cần phải đăng ký tên miền | Giải quyết TLS trong TLS | Tích hợp đa kênh | Truy cập qua CDN |
 | :--- | :---: | :---: | :---: | :---: |
 | **VLESS-XTLS-Vision** | :x: | :heavy_check_mark: | :x: | :x: |
