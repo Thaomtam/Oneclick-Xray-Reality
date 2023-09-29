@@ -4,10 +4,7 @@
 #
 # System Required:  CentOS 6+, Debian8+, Ubuntu16+
 #
-# Copyright (C) 2016-2021 Teddysun <i@teddysun.com>
-#
-# URL: https://teddysun.com/489.html
-#
+# Copyright (C) thoitiet >
 
 cur_dir="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 
