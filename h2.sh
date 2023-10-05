@@ -8,7 +8,7 @@ read -p "Enter serverNames: " sni
 
 read -p "Enter uuid: " uuid
 
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version v1.8.3
 
 json=$(curl -s https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/VLESS-H2-uTLS-REALITY.json)
 
