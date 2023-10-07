@@ -4,9 +4,13 @@ apt-get install -y jq
 apt-get install -y openssl
 apt-get install -y qrencode
 
-read -p "Enter serverNames: " sni
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
 
-read -p "Enter uuid: " uuid
+read -p "SNI HACK MANG: " sni
+
+read -p "UUID BAM TUY Y: " uuid
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version v1.8.3
 
@@ -19,7 +23,7 @@ serverIp=$(curl -s ifconfig.me)
 uuid=$uuid
 shortId=$(openssl rand -hex 8)
 sni=$sni
-url="vless://$uuid@$serverIp:443?path=%2F&security=reality&encryption=none&pbk=$pub&fp=chrome&type=http&sni=$sni&sid=$shortId#h2-huy"
+url="vless://$uuid@$serverIp:443?path=%2F&security=reality&encryption=none&pbk=$pub&fp=chrome&type=http&sni=$sni&sid=$shortId#$uuid"
 
 newJson=$(echo "$json" | jq \
     --arg sni "$sni" \
