@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# Install snapd
 apt update -y && \
-apt install -y socat
-curl https://get.acme.sh | sh
-source ~/.bashrc
-acme.sh --upgrade --auto-upgrade
-acme.sh --set-default-ca --server letsencrypt
-
+apt install -y socat && \
+curl https://get.acme.sh | sh && \
+source ~/.bashrc && \
+acme.sh --upgrade --auto-upgrade && \
+acme.sh --set-default-ca --server letsencrypt && \
 chown -R nobody:nogroup /etc/ssl/private
 
 # Ask for domain
@@ -19,7 +17,7 @@ read -p "Bug SNI: " sni
 # Ask for SNI
 read -p "UUID: " id
 
-acme.sh --issue -d $domain --standalone --keylength ec-256
+acme.sh --issue -d $domain --standalone --keylength ec-256 && \
 acme.sh --install-cert -d $domain --ecc \
 --fullchain-file /etc/ssl/private/fullchain.cer \
 --key-file /etc/ssl/private/private.key
