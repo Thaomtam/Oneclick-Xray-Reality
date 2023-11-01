@@ -13,11 +13,17 @@ apt install -y socat jq openssl qrencode
 
 # Install acme.sh for SSL certificate management
 curl https://get.acme.sh | sh
+
 source ~/.bashrc
+
 acme.sh --upgrade --auto-upgrade
+
 acme.sh --set-default-ca --server letsencrypt
+
 chown -R nobody:nogroup /etc/ssl/private
+
 acme.sh --issue -d "$domain" --standalone --keylength ec-256
+
 acme.sh --install-cert -d "$domain" --ecc \
 --fullchain-file /etc/ssl/private/fullchain.cer \
 --key-file /etc/ssl/private/private.key
