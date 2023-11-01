@@ -43,6 +43,6 @@ curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/m
 | Xem nhật kí | `journalctl -u xray --output cat -e` |
 | Nhật ký thời gian thực | `journalctl -u xray --output cat -f` |
 
-'''
+```
 bash -c "$(curl -L https://raw.githubusercontent.com/Thaomtam/Oneclick-Xray-Reality/main/r11.sh)"
-'''
+```
