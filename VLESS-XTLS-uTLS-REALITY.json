@@ -37,6 +37,26 @@
                     "shortIds": []
         }
       }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 16557,
+      "protocol": "socks",
+      "settings": {
+        "auth": "password",
+        "accounts": [
+          {
+            "user": "admin",
+            "pass": "admin123"
+          }
+        ],
+        "udp": true,
+        "ip": "127.0.0.1"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "none"
+      }
     }
   ],
   "outbounds": [
